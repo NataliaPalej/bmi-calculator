@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>A00279259_NPalej</title>
+		<link rel="stylesheet" href="css/w3.css">
+		<script type="text/javascript" src="jScripts/myScript.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="w3-center">
+				<h2 class = "w3-pink">Health Calculator</h2>
+				<p>BMI (Body Mass Index) is a measure of whether you're a healthy weight for your height. Use this BMI calculator to check the adults in your family.</p>
+			</div>
+
+			<div class="w3-container w3-center w3-padding w3-margin">
+					<table>
+						<tr>
+							<td>
+						<label for="name">Name</label>
+					</td>
+					<td>
+						<input type="text" id="name" name="name" placeholder="Your name..">
+					</td>
+				</tr>
+				</div>
+
+				<tr>
+					<td>
+						<label for="age">Age</label>
+					</td>
+					<td>
+						<input type="number" id="age" name="age" placeholder="Your age..">
+					</td>
+					</tr>
+
+					<tr>
+						<td>
+						<label for="sex">Sex</label>
+					</td>
+					<td>
+						<select id="sex" name="sex" style = width:100%;>
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label for="weight">Weight</label>
+					</td>
+					<td>
+						<input type="number" id="weight" name="weight" placeholder="Your weight [kg]..">
+					</td>
+				</tr>
+		
+				<tr>
+					<td>
+						<label for="height">Height</label>
+					</td>
+					<td>
+						<input type="number" id="height" name="height" placeholder="Your height [cm]..">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label for="activity">Activity</label>
+					</td>
+					<td>
+						<select id="activity" name="activity">
+							<option value="very light">Little or no exercise (no exercise at all)</option>
+							<option value="light">Lightly active (light exercise 1-2 days/week)</option>
+							<option value="moderate">Moderately active (moderate exercise/sports 2-4 days/week)</option>
+							<option value="active">Very active (hard exercise/sports 4-6 days a week) </option>
+							<option value="extraactive">Extra active (very hard exercise/sports & physical job or 2x training)</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+
+			<table>
+				<tr>
+					<td style = "width: 50%;"><input type="submit" value="Submit" onclick="calculate();"></td>
+					<td style = "width: 50%;"><input type="submit" value="Reset" onclick="reset();"></td>
+				</tr>
+			</table>
+			</div>
+
+		</header>
+	</body>
+</html>
