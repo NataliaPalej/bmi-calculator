@@ -3,98 +3,122 @@
 
 <head>
 	<title>A00279259_NPalej</title>
-	<link rel="stylesheet" href="css/w3.css">
+	<link rel="stylesheet" href="css/CSSFile.css">
 	<script type="text/javascript" src="jScripts/myScript.js"></script>
 </head>
 
 <body>
-	<header>
-		<div class="w3-center">
-			<h2 class="w3-pink">Health Calculator</h2>
-			<p>BMI (Body Mass Index) is a measure of whether you're a healthy weight for your height. Use this BMI
-				calculator to check the adults in your family.</p>
-		</div>
-		<img src = "images/bmi-chart.jpg" style = "width:50%; height:50%;"/>
 
-		<div class="w3-container w3-center w3-padding w3-margin">
-			<table>
-				<tr>
-					<td>
-						<label for="name">Name</label>
-					</td>
-					<td>
-						<input type="text" id="name" name="name" placeholder="Your name..">
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<label for="age">Age</label>
-					</td>
-					<td>
-						<input type="number" id="age" name="age" placeholder="Your age..">
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<label for="sex">Sex</label>
-					</td>
-					<td>
-						<select id="sex" name="sex" style=width:38%;>
-							<option value="male">Male</option>
-							<option value="female">Female</option>
-						</select>
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<label for="weight">Weight</label>
-					</td>
-					<td>
-						<input type="number" id="weight" name="weight" placeholder="Your weight [kg]..">
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<label for="height">Height</label>
-					</td>
-					<td>
-						<input type="number" id="height" name="height" placeholder="Your height [cm]..">
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<label for="activity">Activity</label>
-					</td>
-					<td>
-						<select id="activity" name="activity" style=width:38%;>
-							<option value="very light">Little or no exercise (no exercise at all)</option>
-							<option value="light">Lightly active (light exercise 1-2 days/week)</option>
-							<option value="moderate">Moderately active (moderate exercise/sports 2-4 days/week)</option>
-							<option value="active">Very active (hard exercise/sports 4-6 days a week) </option>
-							<option value="extraactive">Extra active (very hard exercise/sports & physical job or 2x
-								training)
-							</option>
-						</select>
-					</td>
-				</tr>
-			</table>
+	<div class="center">
+		<h2>Health Calculator</h2>
+		<p>BMI (Body Mass Index) is a measure of whether you're a healthy weight for your height. Use this BMI
+			calculator to check the adults in your family</p>
+	</div>
+	
+	<img src = "images/bmi-chart.jpg" style = "width:50%; height:50%;"/>
+	
+	<div class="container">
+			<div class="row">
+				<div class="col-25">
+					<label for="fname">Name</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="fname" name="firstname" placeholder="Your name..">
+				</div>
 			</div>
-
-			<div class = "w3-center w3-padding w3-margin">
-			<table>
-				<tr>
-					<td style="width: 50%;"><input type="submit" value="Submit" onclick="calculate();"></td>
-					<td style="width: 50%;"><input type="submit" value="Reset" onclick="reset();"></td>
-				</tr>
-			</table>
-		</div>
-
-	</header>
+			<div class="row">
+				<div class="col-25">
+					<label for="age">Age</label>
+				</div>
+				<div class="col-75">
+					<input type="number" id="age" name="age" placeholder="Your age..">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="sex">Sex</label>
+				</div>
+				<div class="col-75">
+					<select id="sex" name="sex">
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="weight">Weight</label>
+				</div>
+				<div class="col-75">
+					<input type="number" id="weight" name="weight" placeholder="Your weight [kg]..">
+				</div>
+			</div>
+	
+			<div class="row">
+				<div class="col-25">
+					<label for="height">Height</label>
+				</div>
+				<div class="col-75">
+					<input type="number" id="height" name="height" placeholder="Your height [cm]..">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="activity">Activity</label>
+				</div>
+				<div class="col-75">
+					<select id="activity" name="activity">
+						<option value="sedentary">Sedentary (little or no exercise)</option>
+						<option value="light">Lightly active (light exercise/sports 1-3 days/week)</option>
+						<option value="moderate">Moderately active (moderate exercise/sports 3-5 days/week)</option>
+						<option value="active">Very active (hard exercise/sports 6-7 days a week) </option>
+						<option value="extraactive">Extra active (very hard exercise/sports & physical job or 2x training)</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<input type="submit" value="Submit" onclick="calculate();">
+				<input type="submit" value="Reset" onclick="reset();">
+			</div>
+	
+		<br><br>
+	
+	</div>
+	
+	<div id="extrainfo" style="visibility: hidden;" class="center">
+		<div id="bmiresult"></div>
+		<div id="bmr"></div>
+	
+		<p id="resultinfo" class="alert info">In order to loose 0 kg weekly, you must eat 0 kcal per day.</p>
+		<!--<div id="calinfo" class="alert info">In order to loose/gain <p style="display:inline" id="value1">0</p> kg weekly, you must eat <p style="display:inline" id="value2">0</p> kcal per day.</div>-->
+		<!--<div id="dangerous" class="alert info">Eating less than 1000 kcal per day is dangerous!</div>-->
+	
+		<input id="range" type="range" name="rangeInput" min="-1" step="0.01" max="1" value="0" class="white" onchange="updateTextInput();" oninput="updateTextInput();" list="tickmarks" style="width: 100%;">
+		<center><code>Weight loss [kg per week]...</code></center>
+		<datalist id="tickmarks">
+			<option value="-1"></option>
+			<option value="-0.9"></option>
+			<option value="-0.8"></option>
+			<option value="-0.7"></option>
+			<option value="-0.6"></option>
+			<option value="-0.5"></option>
+			<option value="-0.4"></option>
+			<option value="-0.3"></option>
+			<option value="-0.2"></option>
+			<option value="-0.1"></option>
+			<option value="0"></option>
+			<option value="0.1"></option>
+			<option value="0.2"></option>
+			<option value="0.3"></option>
+			<option value="0.4"></option>
+			<option value="0.5"></option>
+			<option value="0.6"></option>
+			<option value="0.7"></option>
+			<option value="0.8"></option>
+			<option value="0.9"></option>
+			<option value="1"></option>
+		</datalist>
+	</div>
 </body>
 
 </html>
