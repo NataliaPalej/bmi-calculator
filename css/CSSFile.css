@@ -2,15 +2,7 @@
 	box-sizing: border-box;
 	}
 
-	input[type=text], select, textarea {
-	width: 100%;
-	padding: 12px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	resize: vertical;
-	}
-
-	input[type=number], select, textarea {
+	input, select {
 	width: 100%;
 	padding: 12px;
 	border: 1px solid #ccc;
@@ -23,7 +15,7 @@
 	display: inline-block;
 	}
 
-	input[type=button] {
+	button {
 	background-color: #04AA6D;
 	color: white;
 	padding: 12px 20px;
@@ -35,9 +27,8 @@
 	margin-top: 20px;
 	}
 
-	input[type=button]:hover {
-	background-color: #45a049;
-	font-weight: bold;
+	button:hover {
+	background-color: #4d8b52;
 	}
 
 	.container {
@@ -68,8 +59,9 @@
 	}
 
 	/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-	@media screen and (max-width: 600px) {
-	.col-25, .col-75, input[type=submit] {
+	@media screen and (max-width: 600px) 
+	{
+	.col-25, .col-75, button {
 	width: 100%;
 	margin-top: 10px;
 	}
@@ -87,16 +79,19 @@
 	border-radius: 10px;
 	}
 
-	.alert.success {background-color: #04AA6D;}
+	.alert.healthy {background-color: #04AA6D;}
 	.alert.info {background-color: #2196F3;}
 	.alert.warning {background-color: #ff9800;}
-
-	.closebtn:hover {
-	color: black;
-	}
 
 	.center {
 	margin: auto;
 	width: 90%;
 	padding: 10px;
+	}
+
+	h2{
+		text-align: center;
+		background-color: #04AA6D;
+		color: white;
+		padding: 1%;
 	}

@@ -4,6 +4,8 @@
 <head>
 	<title>A00279259_NPalej</title>
 	<link rel="stylesheet" href="css/CSSFile.css">
+	<link rel="stylesheet" href="css/w3.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script type="text/javascript" src="jscripts/myScript.js"></script>
 </head>
 
@@ -11,30 +13,30 @@
 
 	<div class="center">
 		<h2>Health Calculator</h2>
-		<p>BMI (Body Mass Index) is a measure of whether you're a healthy weight for your height. Use this BMI
-			calculator to check the adults in your family</p>
+		<p>Welcome to BMI (Body Mass Index) calculator. It is a simple and hassle free way to determine your body mass index. By filling in fields below, you can find out if you are underweight, normal or obese. For those conscious of their health, calculating BMI can lead to a change in lifestyle that may otherwise prejudice present or future health. Check now where are you going to fall within the scale.</p> 
+		<p class = "w3-container w3-blue w3-center w3-padding w3-text-white"><b>Take charge of your own health today!</b></p>
 	</div>
 	
 	<div class="container">
 			<div class="row">
 				<div class="col-25">
-					<label for="name">Name</label>
+					<label>Name</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="name" placeholder="Enter your name..">
+					<input type="text" id="name" placeholder="Enter your name">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="age">Age</label>
+					<label>Age</label>
 				</div>
 				<div class="col-75">
-					<input type="number" id="age" placeholder="Enter your age..">
+					<input type="number" id="age" placeholder="Enter your age">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="sex">Sex</label>
+					<label>Sex</label>
 				</div>
 				<div class="col-75">
 					<select id="sex">
@@ -45,24 +47,24 @@
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="weight">Weight</label>
+					<label>Weight</label>
 				</div>
 				<div class="col-75">
-					<input type="number" id="weight" placeholder="Your weight [kg]..">
+					<input type="number" id="weight" placeholder="Your weight [kg]">
 				</div>
 			</div>
 	
 			<div class="row">
 				<div class="col-25">
-					<label for="height">Height</label>
+					<label>Height</label>
 				</div>
 				<div class="col-75">
-					<input type="number" id="height" placeholder="Your height [cm]..">
+					<input type="number" id="height" placeholder="Your height [cm]">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="activity">Activity</label>
+					<label>Activity</label>
 				</div>
 				<div class="col-75">
 					<select id="activity">
@@ -76,11 +78,9 @@
 			</div>
 			
 			<div class="row">
-				<button id="submit" onclick = "calculate()">Submit</button>
-				<button id="reset" onclick = "resetFields()">Reset</button>
+				<button class = "button" id="submit" onclick = "calculate()">Submit</button>
+				<button class = "button" id="reset" onclick = "resetFields()">Reset</button>
 			</div>
-	
-		<br><br>
 	</div>
 	
 	<!-- Hide content until Submit button is pressed and data valid-->
@@ -116,10 +116,18 @@
 			<option value="1"></option>
 		</datalist>
 	</div>
-
-	<div>
-	<img src = "images/bmi-chart.jpg" style = "width:50%; height:50%;"/>
-</div>
+ 
+	  <div class="w3-row">
+		<div class="w3-container w3-half">
+			<p class = "w3-center w3-blue w3-padding">BMI Chart Table</p>
+		  	<img src = "images/bmi-chart.jpg" alt = "BMI_chart" width="100%" height="100%"/>
+		</div>
+		<div class="w3-container w3-half">
+			<p class = "w3-center w3-green w3-padding">Body Mass Index</p>
+		  	<img id = "theImage" src = "images/bmi-pic.jpg"alt = "BMI-scale" width="100%" height="100%"/>
+			<p id = "moreInfo" class = "w3-container w3-blue w3-padding w3-justify">A normal BMI score falls between 18.5 and 24.9 in a range. This indicates that a person is within the normal weight range for his or her height. A BMI chart is used to categorize a person as underweight, normal, overweight, obese or extremly obese.</p>
+		</div>
+	  </div>
 </body>
 
 </html>

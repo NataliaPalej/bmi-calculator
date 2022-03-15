@@ -4,23 +4,7 @@ function $(id) {
     return document.getElementById(id);
 }
 
-function updateSlider() {
-    var value1 = $("range").value;
 
-    var goal = $("range").value;
-    var lbsgoal = goal * 2.205;
-    var kcaldiff = lbsgoal * 1000;
-    var fin = +calories + +kcaldiff;
-
-    if (fin < 1000) {
-        $('resultinfo').style = "background-color: #ff9800";
-        $('resultinfo').innerHTML = "It is dangerous to eat less than 1000 kcal per day!";
-    }
-    else {
-        $('resultinfo').style = "background-color: #2196F3";
-        $('resultinfo').innerHTML = "In order to loose/gain " +  value1 + " kg weekly, you must eat " + parseFloat(fin).toFixed(0) + " kcal per day.";
-    }
-}
 
 function calculate() {
     var name = $("name").value;
@@ -29,7 +13,6 @@ function calculate() {
     var weight = $("weight").value;
     var height = $("height").value;
     var activity = $("activity").value;
-    console.log("Name: " + name + "\nAge: " + age + "\nSex: " + sex + "\nWeight: " + weight + "\tHeight: " + height + "\nActivity: " + activity);
 
     var result = " ";
     result += name + ", <br>" + "Age: " + age + "<br>Height: " + height + "<br>Weight: " + weight + "<br>Activity: " + activity;
@@ -44,10 +27,11 @@ function calculate() {
             $("bmiresult").innerHTML = "<div class='alert'> <strong>" + name + "!</strong> Your BMI is " + bmi + ". " + detail + " </div>"
             //slider position based on BMI result
             $("range").value = "0.25";
+            $("theImage").src = "images/underweight-pic.jpg";
         }
         if (bmi > 18.5 && bmi < 24.9) {
             detail = "You are healthy.";
-            $("bmiresult").innerHTML = "<div class='alert success'> <strong>" + name + "!</strong> Your BMI is " + bmi + ". " + detail + " </div>"
+            $("bmiresult").innerHTML = "<div class='alert healthy'> <strong>" + name + "!</strong> Your BMI is " + bmi + ". " + detail + " </div>"
             $("range").value = "0";
         }
         if (bmi >= 25) {
@@ -97,9 +81,33 @@ function calculate() {
         updateSlider();
 
         $("extrainfo").style.visibility = "visible";
+
+        console.log("Name: " + name + "\nAge: " + age + "\nSex: " + sex + "\nWeight: " + weight + "\tHeight: " + height + "\nActivity: " + activity);
+        console.log("BMI: " + bmi);
     }
     else {
-        alert("Incorrect details!")
+        alert("Incorrect details. Fill in all fields")
+        console.log("Erorr")
+    }
+     
+}
+
+function updateSlider() {
+    var value1 = $("range").value;
+
+    var goal = $("range").value;
+    var lbsgoal = goal * 2.205;
+    var kcaldiff = lbsgoal * 1000;
+    var fin = +calories + +kcaldiff;
+
+    //if calories < 1000, show warning and dont show kg value
+    if (fin < 1000) {
+        $('resultinfo').style = "background-color: #ff9800";
+        $('resultinfo').innerHTML = "It is dangerous to eat less than 1000 kcal per day!";
+    }
+    else {
+        $('resultinfo').style = "background-color: #2196F3";
+        $('resultinfo').innerHTML = "In order to loose/gain " +  value1 + " kg weekly, you must eat " + parseFloat(fin).toFixed(0) + " kcal per day.";
     }
 }
 
@@ -113,5 +121,6 @@ function resetFields() {
     $("bmiresult").innerHTML = "<div id='bmiresult'></div>";
     $("bmr").innerHTML = "<div id='bmr'></div>";
     $("extrainfo").style.visibility = "hidden";
+    $("theImage").src = "images/bmi-pic.jpg";
     console.log("Fields reset.")
 }
