@@ -6,7 +6,14 @@
 	<link rel="stylesheet" href="css/CSSFile.css">
 	<link rel="stylesheet" href="css/w3.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<script type="text/javascript" src="jscripts/myScript.js"></script>
+	<meta charset="UTF-8">
+	<script src="jscripts/myScript.js"></script>
+	<style>
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
 </head>
 
 <body>
@@ -77,9 +84,9 @@
 				</div>
 			</div>
 			
-			<div class="row">
+			<div class="row w3-margin-top">
 				<button class = "button" id="submit" onclick = "calculate()">Submit</button>
-				<button class = "button" id="reset" onclick = "resetFields()">Reset</button>
+				<button class = "button, w3-margin-right" id="reset" onclick = "resetFields()">Reset</button>
 			</div>
 	</div>
 	
@@ -91,7 +98,7 @@
 		<p id="resultinfo" class="alert info">In order to loose/gain 0 kg weekly, you must eat 0 kcal per day.</p>
 			
 		<input id="range" type="range" min="-1" step="0.01" max="1" value="0" class="white" onchange="updateSlider();" oninput="updateSlider();" list="tickmarks" style="width: 100%;">
-		<center>Weight [kg per week]</center>
+		<p class = "w3-center">Weight [kg per week]</p>
 		<datalist id="tickmarks">
 			<option value="-1"></option>
 			<option value="-0.9"></option>
@@ -119,15 +126,27 @@
  
 	  <div class="w3-row">
 		<div class="w3-container w3-half">
-			<p class = "w3-center w3-blue w3-padding">BMI Chart Table</p>
-		  	<img src = "images/bmi-chart.jpg" alt = "BMI_chart" width="100%" height="100%"/>
+			<p class = "alert info">BMI Chart Table</p>
+		  	<img src = "images/bmi-chart.jpg" alt = "BMIchart"/>
 		</div>
 		<div class="w3-container w3-half">
-			<p class = "w3-center w3-green w3-padding">Body Mass Index</p>
-		  	<img id = "theImage" src = "images/bmi-pic.jpg"alt = "BMI-scale" width="100%" height="100%"/>
-			<p id = "moreInfo" class = "w3-container w3-blue w3-padding w3-justify">A normal BMI score falls between 18.5 and 24.9 in a range. This indicates that a person is within the normal weight range for his or her height. A BMI chart is used to categorize a person as underweight, normal, overweight, obese or extremly obese.</p>
+			<p id = "theTitle" class = "alert healthy">Body Mass Index</p>
+		  	<img id = "theImage" src = "images/bmi-pic.jpg" alt = "scale"/>
+			<p id = "theInfo" class = "w3-container w3-blue w3-padding w3-justify">A normal BMI score falls between 18.5 and 24.9 in a range. This indicates that a person is within the normal weight range for his or her height. A BMI chart is used to categorize a person as underweight, normal, overweight, obese or extremly obese.</p>
 		</div>
 	  </div>
+
+<footer class="w3-container w3-padding w3-center w3-light-grey w3-xlarge">
+    <p class="w3-medium">Natalia Palej</p>
+    <p class="w3-small">Student ID: A00279259</p>
+    <p class="w3-small">Software Design wtih Artificial Intelligence for Cloud Computing<br>Semester 2 Year 1</p>
+	<p>
+		<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+		<img style="border:0;width:88px;height:31px" src="https://www.w3.org/Icons/valid-xhtml11" alt="Valid HTML!" />
+	</p>
+
+		  
+</footer>
 </body>
 
 </html>
