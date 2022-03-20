@@ -19,7 +19,7 @@ function calculate() {
     if (weight > 0 && height > 0 && age > 0) {
         var bmi = weight / (height / 100 * height / 100);
         bmi = parseFloat(bmi).toFixed(2);
-        
+
         if (bmi < 18.5) {
             detail = "You are too thin.";
             //slider position based on BMI result
@@ -34,19 +34,19 @@ function calculate() {
             $("theInfo").innerHTML += "<div class = 'alert warning'>DON'T WAIT. IT MIGHT BE TOO LATE.</div>";
         }
 
-        if (bmi > 18.5 && bmi < 24.9) {
+        else if (bmi >= 18.5 && bmi < 24.9) {
             detail = "You are healthy.";
             $("range").value = "0";
             $("theTitle").className = "alert healthy";
             $("theTitle").innerHTML = "You are healthy!";
             $("theImage").src = "images/perfectbmi-pic.jpg";
             $("theImage").height = "376";
-            $("theImage").width  = "600";
+            $("theImage").width = "600";
             $("theInfo").className = "alert healthy";
             $("theInfo").innerHTML = "Well done, your BMI is perfect. Keep it up and stay healthy!";
 
         }
-        if (bmi > 25 && bmi < 29.9 ) {
+        else if (bmi >= 24.9 && bmi < 29.9) {
             detail = "You are overweight.";
             $("range").value = "-0.25";
             $("theTitle").className = "alert warning";
@@ -55,7 +55,7 @@ function calculate() {
             $("theInfo").innerHTML = "<p class = 'alert warning'>Your BMI is in the overweight category. This increases the risk of heart disease. The good news is that you can turn this around by losing some weight.</p><p><a href = 'https://www2.hse.ie/wellbeing/how-to-eat-well.html' target = '_blank'>CLICK HERE</a> to read how to eat well</p><p><a href = 'https://www.nhs.uk/live-well/eat-well/eight-tips-for-healthy-eating/' target = '_blank'>CLICK HERE</a> for 8 tips for healthy eating</p><p><a href = 'https://www.healthline.com/nutrition/healthy-eating-tips' target = '_blank'>CLICK HERE</a> for 25 tips how to make your diet healthier.</p>";
         }
 
-        if (bmi > 30 && bmi < 34.9) {
+        else if (bmi >= 29.9 && bmi < 34.9) {
             detail = "You are obese.";
             $("range").value = "-0.3";
             $("theTitle").className = "alert";
@@ -65,7 +65,7 @@ function calculate() {
 
         }
 
-        if (bmi >= 35) {
+        else if (bmi >= 34.9) {
             detail = "You are severly obese.";
             $("range").value = "-0.35";
             $("theTitle").className = "alert";
@@ -75,6 +75,8 @@ function calculate() {
         }
 
         $("bmiresult").innerHTML = "<div class='alert'> <strong>" + name + "!</strong> Your BMI is " + bmi + ". " + detail + "</div>";
+        $("links").className = "alert info";
+        $("links").innerHTML = "<p><a href = 'https://www.eatthis.com/easy-exercises-boost-health/' target = '_blank'>Exercises That Will Make You Feel Better</p><p><a href = 'https://www.delish.com/cooking/recipe-ideas/g3733/healthy-dinner-recipes/' target = '_blank'>Healthy Dinner Ideas</a></p><p><a href = 'https://www.theguardian.com/lifeandstyle/2008/jul/13/observerhealth.observerhealth4' target = '_blank'>All You Need To Know About Healthy Life</a></p>";
 
         //Basal Metabolic Rate (BMR) - SOURCE https://www.bmi-calculator.net/bmr-calculator/bmr-formula.php
         var bmr = 0;
@@ -125,7 +127,7 @@ function calculate() {
         alert("Incorrect details. Fill in all fields");
         console.log("Erorr");
     }
-     
+
 }
 
 function updateSlider() {
@@ -143,7 +145,7 @@ function updateSlider() {
     }
     else {
         $('resultinfo').style = "background-color: #2196F3";
-        $('resultinfo').innerHTML = "In order to loose/gain " +  value1 + " kg weekly, you must eat " + final.toFixed(0) + " kcal per day.";
+        $('resultinfo').innerHTML = "In order to loose/gain " + value1 + " kg weekly, you must eat " + final.toFixed(0) + " kcal per day.";
     }
 }
 
@@ -151,7 +153,7 @@ function resetFields() {
     $("name").value = "";
     $("age").value = "";
     $("sex").value = "male";
-    $("weight").value = "";
+    $("weight").value = ""; 
     $("height").value = "";
     $("activity").value = "verylight";
     $("bmiresult").innerHTML = "<div id='bmiresult'></div>";
